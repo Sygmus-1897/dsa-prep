@@ -7,23 +7,41 @@ const { unSortedArrays } = require("../utils");
 
 /* 
   Algo:
-  1. start i from 0 
-  2. find smallest elem
-  3. swap smallest elem to ith place. Now starting subset is sorted
-  4. move i+1
-  5. repeat step 2 till i<n-1
-  6. the array is sorted
+  1. Break the array into two halves (by indexes, we are not actually making new array here. (start+end)/2) 
+  2. First recursively call for left half of the array i.e. mergeSort(array, start, mid);
+  3. Then recursively call for right half of the array i.e. mergeSort(array, mid+1, end);
+  4. Break down till we have 1 element, i.e. start>=end
+  5. Now merge two halves in sorted manner into a new temp. array
+  6. Update actual array with new temporary sorted array
+  7. the array is sorted
 */
 
 /* 
   Pseudo Code:
-  for (i -> 0 to N-1) {
-    min_idx = i;
-    for (j -> i to N) {
-      if (arr[j] < arr[min_idx]) 
-        min_idx = j;
+  mergeSort (arr, start, end) {
+    if (start >= end) return; // baseCase
+    mid = (start+end)/2
+    mergeSort(arr, start, mid);
+    mergeSort(arr, mid+1, end);
+    merge(arr, start, mid, end);
+  }
+
+  merge(arr, start, mid, end){
+    left=start, right=mid+1;
+    tempArr = []
+    while(left <= mid && right <= end) {
+      if(arr[left] < arr[right]) tempArr.push(arr[left]) AND left++;
+      else tempArr.push(arr[right]) AND right++;
     }
-    swap(i, min_idx);
+
+    // for leftovers
+    while (left <= mid) tempArr.push(arr[left]) AND left++;
+    while (right <= end) tempArr.push(arr[right]) AND right++;
+
+    // update actual array
+    for (i -> START to END) {
+      arr[i] = tempArr[i-start];
+    }
   }
 */
 
@@ -31,7 +49,7 @@ const { unSortedArrays } = require("../utils");
 /*
   Complexities:
   Time: 
-    Worst, Best, Avg - O(n^2)
+    Worst, Best, Avg - O(nlogn)
   Space: 
     O(n) - Temp. array used to store sorted sub array
  */

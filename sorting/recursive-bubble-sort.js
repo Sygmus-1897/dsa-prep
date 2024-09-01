@@ -53,7 +53,7 @@ const recursiveBubbleSort = (array, n) => {
 
   if (didSwap == 0) return;
 
-  recursivebubbleSort(array, n-1);
+  recursiveBubbleSort(array, n-1);
 }
 
 let unSortedArray = unSortedArrays[0];
