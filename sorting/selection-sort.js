@@ -3,6 +3,8 @@ console.log('< --------- SELECTION SORT ------------>')
 const { swap, unSortedArrays } = require("../utils");
 
 
+// Striver Series: https://youtu.be/HGk_ypEuS24?t=168
+
 /* 
   Algo:
   1. start i from 0 
@@ -30,6 +32,8 @@ const { swap, unSortedArrays } = require("../utils");
   Complexities:
   Time: 
     Worst, Best, Avg - O(n^2)
+  Space: 
+    O(1) - No extra space used
  */
 
 

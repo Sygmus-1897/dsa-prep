@@ -2,6 +2,8 @@ console.log('< --------- BUBBLE SORT ------------>')
 
 const { swap, unSortedArrays } = require("../utils");
 
+// Striver Series: https://youtu.be/HGk_ypEuS24?t=1062
+
 /* 
   Algo:
   1. Check for the array size N to 0 
@@ -28,6 +30,8 @@ const { swap, unSortedArrays } = require("../utils");
   Time: 
     Worst, Avg - O(n^2)
     Best - O(n) -with Optimisation
+  Space: 
+    O(1) - No extra space used
  */
 
 

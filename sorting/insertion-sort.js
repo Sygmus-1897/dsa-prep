@@ -2,6 +2,8 @@ console.log('< --------- INSERTION SORT ------------>')
 
 const { swap, unSortedArrays } = require("../utils");
 
+// Striver Series: https://youtu.be/HGk_ypEuS24?t=1900
+
 /* 
   Algo:
   1. Start from 0
@@ -27,6 +29,8 @@ const { swap, unSortedArrays } = require("../utils");
   Time: 
     Worst, Avg - O(n^2)
     Best - O(n)
+  Space: 
+    O(1) - No extra space used
  */
 
 
